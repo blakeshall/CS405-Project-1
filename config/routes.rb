@@ -1,5 +1,7 @@
 Project1::Application.routes.draw do
-  resources :services
+  resources :services do
+    resources :payments
+  end
 
   get "home/index"
 
