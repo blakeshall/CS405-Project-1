@@ -25,6 +25,17 @@
   <%= @service.active %>
 </p>
 
+<h2>Make a new payment</h2>
+<%= form_for([@service, @service.payments.build]) do |f| %>
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Edit', edit_service_path(@service) %> |
 <%= link_to 'Back', services_path %>
