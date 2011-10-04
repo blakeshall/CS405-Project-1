@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20111003132040) do
     t.text     "description"
     t.decimal  "amount"
     t.boolean  "reoccuring"
-    t.boolean  "active"
+    t.boolean  "active",      :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

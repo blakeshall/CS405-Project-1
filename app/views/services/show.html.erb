@@ -36,6 +36,14 @@
   </div>
 <% end %>
 
+<h2>Deactivate Service (BROKEN)</h2>
+<%= form_for(@service) do |f| %>
+
+  <%= hidden_field_tag  :active,  false %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Edit', edit_service_path(@service) %> |
 <%= link_to 'Back', services_path %>

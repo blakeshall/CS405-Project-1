@@ -5,7 +5,7 @@ class CreateServices < ActiveRecord::Migration
       t.text :description
       t.decimal :amount
       t.boolean :reoccuring
-      t.boolean :active
+      t.boolean :active, :default => true
 
       t.timestamps
     end
