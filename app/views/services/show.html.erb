@@ -25,6 +25,24 @@
   <%= @service.active %>
 </p>
 
+<h2>Year to date payments</h2>
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>Date</th>
+  </tr>
+  <% @service.year_to_date.each do |p| %>
+    <tr>
+      <td><%= p.amount %></td>
+      <td><%= p.created_at %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <th>Total</th>
+    <td><%= @service.current_year_total %></td>
+  </tr>
+</table>
+
 <h2>Make a new payment</h2>
 <%= form_for([@service, @service.payments.build]) do |f| %>
   <div class="field">

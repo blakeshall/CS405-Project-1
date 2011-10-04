@@ -1,2 +1,19 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Year to Date Payments</h1>
+<table>
+  <tr>
+    <th>Service</th>
+    <th>Amount</th>
+    <th>Date</th>
+  </tr>
+  <% Service.all_year_to_date.each do |p| %>
+    <tr>
+      <td><%= p.service_id %></td>
+      <td><%= p.amount %></td>
+      <td><%= p.created_at %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <th>Total</th>
+    <td><%= Service.all_year_total %></td>
+  </tr>
+</table>
