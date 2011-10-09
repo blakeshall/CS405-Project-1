@@ -1,5 +1,7 @@
 class Payment < ActiveRecord::Base
   belongs_to :service
+  validates :amount, :presence => true
+
 
   def self.month_payments(month)
     # payments where created at.month == month?
