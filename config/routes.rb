@@ -5,7 +5,7 @@ Project1::Application.routes.draw do
 
   get "home/index"
   match 'reports' => 'reports#index'
-  match 'reports/:month' => 'reports#month'
+  match 'reports/month' => 'reports#month'
 
   root :to => "home#index"
   # The priority is based upon order of creation:

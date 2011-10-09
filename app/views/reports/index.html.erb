@@ -19,3 +19,10 @@
     <td><%= Payment.all_year_total %></td>
   </tr>
 </table>
+
+<h2>Payments for given month</h2>
+<%= form_tag("/reports/month", :method => "get") do %>
+  <%= label_tag(:month, "Search for:") %>
+  <%= text_field_tag(:month) %>
+  <%= submit_tag("Search") %>
+<% end %>
