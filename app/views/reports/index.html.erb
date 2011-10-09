@@ -1,0 +1,21 @@
+<%= link_to 'Home', root_path %>
+<h1>Reports</h1>
+<h2>Year to Date Payments</h2>
+<table>
+  <tr>
+    <th>Service</th>
+    <th>Amount</th>
+    <th>Date</th>
+  </tr>
+  <% Payment.all_year_to_date.each do |p| %>
+    <tr>
+      <td><%= p.service_id %></td>
+      <td><%= p.amount %></td>
+      <td><%= p.created_at %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <th>Total</th>
+    <td><%= Payment.all_year_total %></td>
+  </tr>
+</table>

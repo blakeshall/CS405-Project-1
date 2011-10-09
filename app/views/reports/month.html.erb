@@ -1,0 +1,15 @@
+<h2>Monthly Payments for Month: <%= params[:month] %></h2>
+<table>
+  <tr>
+    <th>Service</th>
+    <th>Amount</th>
+    <th>Date</th>
+  </th>
+  <% @payments.each do |p| %>
+    <tr>
+      <td><%= p.service_id %></td>
+      <td><%= p.amount %></td>
+      <td><%= p.created_at %></td>
+    </tr>
+  <% end %>
+</table>
