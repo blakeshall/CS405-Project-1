@@ -17,3 +17,22 @@
     <td><%= Payment.all_year_total %></td>
   </tr>
 </table>
+<h1>Unpaid Services</h1>
+<table>
+  <tr>
+    <th>Service</th>
+    <th>Amount Owed</th>
+  </tr>
+  <% @total = 0.0 %>
+  <% Service.unpaid_services.each do |s| %>
+    <tr>
+      <td><%= s.name %></td>
+      <td><%= s.owed %></td>
+      <% @total += s.owed %>
+    </tr>
+  <% end %>
+  <tr>
+    <th>Total</th>
+    <td><%= @total %></td>
+    </tr>
+</table>

@@ -1,7 +1,7 @@
 class Payment < ActiveRecord::Base
   belongs_to :service
 
-  def self.month_payment(month)
+  def self.month_payments(month)
     # payments where created at.month == month?
     # Payment.where(:created_at => (Time.now.beginning_of_month)..Time.now).order("created_at ASC")
     @payments = Payment.all
