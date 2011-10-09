@@ -6,11 +6,17 @@
     <th>Amount</th>
     <th>Date</th>
   </th>
+  <% @total = 0.0 %>
   <% @payments.each do |p| %>
     <tr>
       <td><%= p.service_id %></td>
-      <td><%= p.amount %></td>
+      <td><%= number_to_currency(p.amount) %></td>
       <td><%= p.created_at %></td>
+      <% @total += p.amount %>
     </tr>
   <% end %>
+  <tr>
+    <th>Total</th>
+    <td><%= number_to_currency(@total) %></td>
+  </tr>
 </table>

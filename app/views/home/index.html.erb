@@ -1,24 +1,5 @@
 <%= link_to 'Services', services_path %>
 <%= link_to 'Reports', reports_path %>
-<h1>Year to Date Payments</h1>
-<table>
-  <tr>
-    <th>Service</th>
-    <th>Amount</th>
-    <th>Date</th>
-  </tr>
-  <% Payment.all_year_to_date.each do |p| %>
-    <tr>
-      <td><%= p.service_id %></td>
-      <td><%= p.amount %></td>
-      <td><%= p.created_at %></td>
-    </tr>
-  <% end %>
-  <tr>
-    <th>Total</th>
-    <td><%= Payment.all_year_total %></td>
-  </tr>
-</table>
 <h1>Unpaid Services</h1>
 <table>
   <tr>
@@ -29,12 +10,12 @@
   <% Service.unpaid_services.each do |s| %>
     <tr>
       <td><%= s.name %></td>
-      <td><%= s.owed %></td>
+      <td><%= number_to_currency(s.owed)%></td>
       <% @total += s.owed %>
     </tr>
   <% end %>
   <tr>
     <th>Total</th>
-    <td><%= @total %></td>
+    <td><%= number_to_currency(@total) %></td>
     </tr>
 </table>

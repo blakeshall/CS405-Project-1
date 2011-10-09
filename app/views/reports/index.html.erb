@@ -10,13 +10,13 @@
   <% Payment.all_year_to_date.each do |p| %>
     <tr>
       <td><%= p.service_id %></td>
-      <td><%= p.amount %></td>
+      <td><%= number_to_currency(p.amount) %></td>
       <td><%= p.created_at %></td>
     </tr>
   <% end %>
   <tr>
     <th>Total</th>
-    <td><%= Payment.all_year_total %></td>
+    <td><%= number_to_currency(Payment.all_year_total) %></td>
   </tr>
 </table>
 
