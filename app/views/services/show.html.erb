@@ -55,11 +55,10 @@
 <% end %>
 
 <h2>Deactivate Service (BROKEN)</h2>
-<%= form_for(@service) do |f| %>
+<%= form_tag("/services/#{@service.id}/deactivate", :method => "get") do %>
 
-  <%= hidden_field_tag  :active,  false %>
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag("Deactivate") %>
   </div>
 <% end %>
 

@@ -6,6 +6,7 @@ Project1::Application.routes.draw do
   get "home/index"
   match 'reports' => 'reports#index'
   match 'reports/month' => 'reports#month'
+  match 'services/:id/deactivate' => 'services#deactivate'
 
   root :to => "home#index"
   # The priority is based upon order of creation:

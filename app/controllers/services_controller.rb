@@ -80,4 +80,12 @@ class ServicesController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def deactivate
+    @service = Service.find(params[:id])
+    @service.active = false
+    @service.save!
+    redirect_to @service
+  end
+
 end
