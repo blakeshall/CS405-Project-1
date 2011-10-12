@@ -2,7 +2,7 @@
 <%= link_to 'Reports', reports_path %>
 <h1>Listing services</h1>
 
-<table>
+<table class="full_table">
   <tr>
     <th>Name</th>
     <th>Description</th>
@@ -16,13 +16,11 @@
 
 <% @services.each do |service| %>
   <tr>
-    <td><%= service.name %></td>
+    <td><%= link_to service.name, service %></td>
     <td><%= service.description %></td>
     <td><%= number_to_currency(service.amount) %></td>
     <td><%= service.reoccuring %></td>
     <td><%= service.active %></td>
-    <td><%= link_to 'Show', service %></td>
-    <td><%= link_to 'Edit', edit_service_path(service) %></td>
   </tr>
 <% end %>
 </table>

@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @service.name %>
-</p>
+<div class="container">
+  <h2><%= @service.name %></h2>
+
+<div class="left">
 
 <p>
   <b>Description:</b>
@@ -42,7 +42,9 @@
     <td><%= number_to_currency(@service.current_year_total) %></td>
   </tr>
 </table>
+</div>
 
+<div class="right">
 <h2>Make a new payment</h2>
 <%= form_for([@service, @service.payments.build]) do |f| %>
   <div class="field">
@@ -54,13 +56,17 @@
   </div>
 <% end %>
 
-<h2>Deactivate Service</h2>
-<%= form_tag("/services/#{@service.id}/deactivate", :method => "get") do %>
+<% if @service.active %>
+  <h2>Deactivate Service</h2>
+  <%= form_tag("/services/#{@service.id}/deactivate", :method => "get") do %>
 
-  <div class="actions">
-    <%= submit_tag("Deactivate") %>
-  </div>
+    <div class="actions">
+      <%= submit_tag("Deactivate") %>
+    </div>
+  <% end %>
 <% end %>
+</div>
+</div>
 
 <%= link_to 'Edit', edit_service_path(@service) %> |
 <%= link_to 'Back', services_path %>

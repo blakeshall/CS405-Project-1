@@ -11,5 +11,23 @@ body{
   margin-bottom: 0;
   margin-right: auto;
   margin-left: auto;
-  width: 75%;
+  width: 66%;
+}
+
+.full_table{
+  width: 100%;
+  text-align: center;
+}
+
+.bottom{
+  float: none;
+}
+.left{
+  float: left;
+
+}
+
+.right{
+  float: right;
+
 }
