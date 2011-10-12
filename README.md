@@ -6,6 +6,7 @@
 
 This is a web app that tracks multiple Services and their payments. Each
 service is composed of a few attributes:
+
 -  Name: The name of the Service
 -  Description: Just a general description of the service (optional)
 -  Amount: The amount due for the service
@@ -19,10 +20,12 @@ database as the primary key, created\_at and updated\_at timestamps.
 
 In addition to services it allso tracks payments for each services.
 Payments are comprised of:
+
 -  Amount: The amount paid for the service
 
 This is the only thing the user has control of. The database handles the
 other attributes:
+
 -  Payment\_id: the unique key for each payment
 -  Service\_id: Which service this payment belongs to
 -  Created\_at and Updated\_at: timestamps generated and used by the
