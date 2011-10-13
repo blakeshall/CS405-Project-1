@@ -1,4 +1,5 @@
 class PaymentsController < ApplicationController
+
   def create
     @service =Service.find(params[:service_id])
     @payment = @service.payments.create(params[:payment])

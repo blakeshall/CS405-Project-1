@@ -1,4 +1,7 @@
 class ServicesController < ApplicationController
+
+  http_basic_authenticate_with :name => "demo", :password => "cs405g", :except => :index
+
   # GET /services
   # GET /services.json
   def index

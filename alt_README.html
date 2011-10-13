@@ -1,21 +1,4 @@
-<div class="row">
-  <div class="span8 offset4">
-    <% if Service.unpaid_services.length == 0 %>
-      <h2>All Services Paid Up</h2>
-    <% else %>
-      <h3>Some Services are Unpaid</h3>
-      <ul>
-        <% Service.unpaid_services.each do |s| %>
-          <li><%= s.name %></li>
-        <% end %>
-        <p>Check the Reports section for more information</p>
-    <% end %>
-  </div>
-</div>
-<div class="row">
-
-  <div class="span8 offset4">
-    <h2>CS405 Project 1: Home Service Tracker</h2>
+<h2>CS405 Project 1: Home Service Tracker</h2>
 
 <h4>Author: Blake Hall</h4>
 
@@ -137,5 +120,3 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-  </div>
-</div>
