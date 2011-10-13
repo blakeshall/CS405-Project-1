@@ -1,8 +1,7 @@
-<%= link_to 'Home', root_path %>
-<%= link_to 'Services', services_path %>
+<div class="row">
+  <div class="span8">
 <h1>Reports</h1>
 
-<div class="left">
 <h2>Year to Date Payments</h2>
 <table>
   <tr>
@@ -18,11 +17,13 @@
     </tr>
   <% end %>
   <tr>
-    <th>Total</th>
+    <td><strong>Total</strong></td>
     <td><%= number_to_currency(Payment.all_year_total) %></td>
   </tr>
 </table>
+</div>
 
+<div class="span8">
 <h2>Payments for given month</h2>
 <%= form_tag("/reports/month", :method => "get") do %>
   <%= label_tag(:month, "Search for:") %>
@@ -30,10 +31,8 @@
                                             'April' => 4, 'May'=> 5, 'June'=> 6, 'July'=> 7,
                                             'August'=> 8,'September'=>9,'October' => 10,
                                             'November' => 11, 'December' => 12})) %>
-  <%= submit_tag("Search") %>
+                                            <%= submit_tag("Search", :class => "btn primary") %>
 <% end %>
-</div>
-<div class="right">
 <h2>Unpaid Services</h2>
 <table>
   <tr>
@@ -49,9 +48,9 @@
     </tr>
   <% end %>
   <tr>
-    <th>Total</th>
+    <td><strong>Total</strong></td>
     <td><%= number_to_currency(@total) %></td>
   </tr>
 </table>
 </div>
-
+</div>

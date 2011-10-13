@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h2{
-}
-
-.container{
-  overflow: hidden;
-}
-
+.new_payment{padding-left:20px;}.form-stacked fieldset{padding-top:9px;}
+.new_payment legend{padding-left:0;}
+.new_payment label{display:block;float:none;width:auto;font-weight:bold;text-align:left;line-height:20px;padding-top:0;}
+.new_payment .clearfix{margin-bottom:9px;}.form-stacked .clearfix div.input{margin-left:0;}
+.new_payment .inputs-list{margin-bottom:0;}.form-stacked .inputs-list li{padding-top:0;}.form-stacked .inputs-list li label{font-weight:normal;padding-top:0;}
+.new_payment div.clearfix.error{padding-top:10px;padding-bottom:10px;padding-left:10px;margin-top:0;margin-left:-10px;}
+.new_payment .actions{margin-left:-20px;padding-left:20px;}

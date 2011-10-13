@@ -1,10 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <h2><%= @service.name %></h2>
+<div class="row">
+  <div class="span8">
+<h2><%= @service.name %></h2>
+  </div>
+</div>
 
-<div class="left">
-
+<div class="row">
+  <div class="span8">
 <p>
   <b>Description:</b>
   <%= @service.description %>
@@ -24,7 +27,22 @@
   <b>Active:</b>
   <%= @service.active %>
 </p>
+</div>
+<div class="span8">
+<h2>Make a new payment</h2>
+<%= form_for([@service, @service.payments.build]) do |f| %>
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="actions">
+    <%= submit_tag("Make Payment", :class => "btn primary") %>
+  </div>
+<% end %>
+</div>
 
+<div class="row">
+  <div class="span8">
 <h2>Year to date payments</h2>
 <table>
   <tr>
@@ -38,35 +56,26 @@
     </tr>
   <% end %>
   <tr>
-    <th>Total</th>
+    <td><strong>Total</strong></td>
     <td><%= number_to_currency(@service.current_year_total) %></td>
   </tr>
 </table>
-</div>
-
-<div class="right">
-<h2>Make a new payment</h2>
-<%= form_for([@service, @service.payments.build]) do |f| %>
-  <div class="field">
-    <%= f.label :amount %>
-    <%= f.text_field :amount %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
 
+<div class="span8">
 <% if @service.active %>
   <h2>Deactivate Service</h2>
   <%= form_tag("/services/#{@service.id}/deactivate", :method => "get") do %>
 
     <div class="actions">
-      <%= submit_tag("Deactivate") %>
+      <%= submit_tag("Deactivate", :class => "btn danger") %>
     </div>
   <% end %>
 <% end %>
 </div>
 </div>
 
+<div class="row">
 <%= link_to 'Edit', edit_service_path(@service) %> |
 <%= link_to 'Back', services_path %>
+</div>

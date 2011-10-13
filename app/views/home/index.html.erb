@@ -1,17 +1,20 @@
-<%= link_to 'Services', services_path %>
-<%= link_to 'Reports', reports_path %>
+<div class="row">
+  <div class="span8 offset4">
+    <% if Service.unpaid_services.length == 0 %>
+      <h2>All Services Paid Up</h2>
+    <% else %>
+      <h3>Some Services are Unpaid</h3>
+      <ul>
+        <% Service.unpaid_services.each do |s| %>
+          <li><%= s.name %></li>
+        <% end %>
+        <p>Check the Reports section for more information</p>
+    <% end %>
+  </div>
+</div>
+<div class="row">
 
-<ul>
-  <li>Alerts for Unpaid things</li>
-  <li>Anything else for a homepage</li>
-</ul>
-<% if Service.unpaid_services.length == 0 %>
-  <h2>All Services Paid Up</h2>
-<% else %>
-  <h3>Some services are not paid</h3>
-  <ul>
-  <% Service.unpaid_services.each do |s| %>
-    <li><%= s.name %></li>
-  <% end %>
-  <p>Check the Reports section for more information</p>
-<% end %>
+  <div class="span8 offset4">
+    <h1>README</h1>
+  </div>
+</div>
