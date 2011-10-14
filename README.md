@@ -1,6 +1,6 @@
 ## CS405 Project 1: Home Service Tracker
 
-#### Author: Blake Hall
+#### *Author: Blake Hall*
 
 ###Description:
 
@@ -28,7 +28,14 @@ In addition there are three additional attributes for each service
 created by Rails and the database: Service\_id which is used by the
 database as the primary key, created\_at and updated\_at timestamps.
 
-In addition to services it allso tracks payments for each services.
+*NOTE:* I chose to not have any tables dropped. This is because if you drop a
+service it will no longer appear on the reports. If it's a one time bill
+it will not be charged again so it stays in the database for reporting
+purposes. In case of reoccuring charges there is the option to
+deactivate it, because dropping it would remove it from the year to date
+and monthly reports.
+
+In addition to services it also tracks payments for each services.
 Payments are comprised of:
 
 -  Amount: The amount paid for the service
